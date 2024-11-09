@@ -1,0 +1,101 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+body {
+  background: #2c3e50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+nav {
+  width: 200px;
+  height: 200px;
+  background: #e74c3c;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+nav:hover ul {
+  transform: translate(-50%, -50%) scale(1);
+}
+nav:hover ul li:nth-child(1) {
+  transform: rotate(40deg);
+}
+nav:hover ul li:nth-child(1) span {
+  transform: rotate(-40deg);
+}
+nav:hover ul li:nth-child(2) {
+  transform: rotate(80deg);
+}
+nav:hover ul li:nth-child(2) span {
+  transform: rotate(-80deg);
+}
+nav:hover ul li:nth-child(3) {
+  transform: rotate(120deg);
+}
+nav:hover ul li:nth-child(3) span {
+  transform: rotate(-120deg);
+}
+nav:hover ul li:nth-child(4) {
+  transform: rotate(160deg);
+}
+nav:hover ul li:nth-child(4) span {
+  transform: rotate(-160deg);
+}
+nav:hover ul li:nth-child(5) {
+  transform: rotate(200deg);
+}
+nav:hover ul li:nth-child(5) span {
+  transform: rotate(-200deg);
+}
+nav:hover ul li:nth-child(6) {
+  transform: rotate(240deg);
+}
+nav:hover ul li:nth-child(6) span {
+  transform: rotate(-240deg);
+}
+nav:hover ul li:nth-child(7) {
+  transform: rotate(280deg);
+}
+nav:hover ul li:nth-child(7) span {
+  transform: rotate(-280deg);
+}
+nav:hover ul li:nth-child(8) {
+  transform: rotate(320deg);
+}
+nav:hover ul li:nth-child(8) span {
+  transform: rotate(-320deg);
+}
+nav:hover ul li:nth-child(9) {
+  transform: rotate(360deg);
+}
+nav:hover ul li:nth-child(9) span {
+  transform: rotate(-360deg);
+}
+nav ul {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.3s;
+}
+nav ul li {
+  width: 80px;
+  height: 80px;
+  background: #e74c3c;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  color: white;
+  transition: 1s;
+  transform-origin: 150px 150px;
+}

@@ -1,0 +1,133 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+body {
+  background: #2c3e50;
+  // 弹性布局
+  display: flex;
+  // 主轴居中
+  justify-content: center;
+  // 交叉轴居中
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+nav {
+  width: 200px;
+  height: 200px;
+  background: #e74c3c;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    ul {
+      // 默认隐藏，hover的时候显示出来
+      transform: translate(-50%, -50%) scale(1);
+
+      li:nth-child(1) {
+        transform: rotate(40deg);
+        // 不让文字斜着显示
+        span {
+          transform: rotate(-40deg);
+        }
+      }
+
+      li:nth-child(2) {
+        transform: rotate(80deg);
+
+        span {
+          transform: rotate(-80deg);
+        }
+      }
+
+      li:nth-child(3) {
+        transform: rotate(120deg);
+
+        span {
+          transform: rotate(-120deg);
+        }
+      }
+
+      li:nth-child(4) {
+        transform: rotate(160deg);
+
+        span {
+          transform: rotate(-160deg);
+        }
+      }
+
+      li:nth-child(5) {
+        transform: rotate(200deg);
+
+        span {
+          transform: rotate(-200deg);
+        }
+      }
+
+      li:nth-child(6) {
+        transform: rotate(240deg);
+
+        span {
+          transform: rotate(-240deg);
+        }
+      }
+
+      li:nth-child(7) {
+        transform: rotate(280deg);
+
+        span {
+          transform: rotate(-280deg);
+        }
+      }
+
+      li:nth-child(8) {
+        transform: rotate(320deg);
+
+        span {
+          transform: rotate(-320deg);
+        }
+      }
+
+      li:nth-child(9) {
+        transform: rotate(360deg);
+
+        span {
+          transform: rotate(-360deg);
+        }
+      }
+    }
+  }
+
+  ul {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: .3s;
+
+    li {
+      width: 80px;
+      height: 80px;
+      background: #e74c3c;
+      border-radius: 50%;
+      position: absolute;
+      // 弹性布局
+      display: flex;
+      // 主轴居中
+      justify-content: center;
+      // 交叉轴居中
+      align-items: center;
+      font-size: 3em;
+      color: white;
+      transition: 1s;
+      transform-origin: 150px 150px;
+    }
+  }
+}
