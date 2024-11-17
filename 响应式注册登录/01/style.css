@@ -12,6 +12,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  /* 渐变背景色 */
   background: linear-gradient(90deg, #e2e2e2, #c9d6ff);
 }
 
@@ -23,16 +24,17 @@ body {
   border-radius: 30px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
   margin: 20px;
+  /* 溢出容器部分隐藏 */
   overflow: hidden;
 }
 
-.container.active .toggle-box::before {
-  left: 50%;
-}
 
 .form-box {
+  /* 绝对定位 */
   position: absolute;
+  /* form表单靠右显示 */
   right: 0;
+  /* 占一半宽度 */
   width: 50%;
   height: 100%;
   background-color: #fff;
@@ -42,17 +44,20 @@ body {
   text-align: center;
   padding: 40px;
   z-index: 1;
-  transition: 0.6s ease-in-out 1.2s, visibility 0 1;
+  transition: 0.6s ease-in-out 1.2s, visibility 0s 1s;
 }
 
+/* 表单容器整体往左移动 */
 .container.active .form-box {
   right: 50%;
 }
 
+/* 隐藏注册界面 */
 .form-box.register {
   visibility: hidden;
 }
 
+/* 显示注册界面，盖住登陆界面 */
 .container.active .form-box.register {
   visibility: visible;
 }
@@ -87,7 +92,7 @@ body {
 
 .input-box input {
   width: 100%;
-  padding: 13px;
+  padding: 13px 50px 13px 20px;
   background-color: #eee;
   border: none;
   outline: none;
@@ -102,6 +107,7 @@ body {
   font-weight: 400;
 }
 
+/* 图标字体 */
 .input-box i {
   position: absolute;
   right: 20px;
@@ -111,16 +117,17 @@ body {
   color: #888;
 }
 
+/* 忘记密码 */
 .forgot-link {
   margin: -15px 0 15px;
 }
-
 .forgot-link a {
   font-size: 14.5px;
   color: #333;
   text-decoration: none;
 }
 
+/* 登陆注册按钮 */
 .btn {
   width: 100%;
   height: 48px;
@@ -139,11 +146,11 @@ body {
   margin: 15px 0;
 }
 
+/* 社交媒体图标字体 */
 .social-icons {
   display: flex;
   justify-content: center;
 }
-
 .social-icons  a{
   display: inline-flex;
   padding: 10px;
@@ -157,14 +164,17 @@ body {
 
 .toggle-box {
   position: absolute;
+  /* 宽度和高度跟container一致 */
   width: 100%;
   height: 100%;
 }
 
+/* 画蓝色部分 */
 .toggle-box::before {
   content: '';
   position: absolute;
   left: -250%;
+  /* 3倍toggle-box的宽度 */
   width: 300%;
   height: 100%;
   background-color: #7494ec;
@@ -173,8 +183,14 @@ body {
   transition: 1.8s ease-in-out;
 }
 
+/* 点击切换注册界面的按钮时往右移动到登陆界面位置 */
+.container.active .toggle-box::before {
+  left: 50%;
+}
+
 .toggle-panel {
   position: absolute;
+  /* 占用toggle-box的一半 */
   width: 50%;
   height: 100%;
   color: #fff;
@@ -191,16 +207,18 @@ body {
   transition-delay: 1.2s;
 }
 
+/* 往左移动 */
 .container.active .toggle-panel.toggle-left {
   left: -50%;
   transition-delay: 0.6s;
 }
 
 .toggle-panel.toggle-right {
+  /* 将切换到登录的按钮往右移动 */
   right: -50%;
   transition-delay: 0.6s;
 }
-
+/* 往左移动 */
 .container.active .toggle-panel.toggle-right {
   right: 0;
   transition-delay: 1.2s;
@@ -218,11 +236,13 @@ body {
   box-shadow: none;
 }
 
+/* 当屏幕宽度小于或等于650像素时 */
 @media screen and (max-width: 650px) {
   .container {
       height: calc(100vh - 40px);
   }
 
+  /* 适配移动端，将左右显示的改成上下显示， */
   .form-box {
       bottom: 0;
       width: 100%;
@@ -234,6 +254,7 @@ body {
       bottom: 30%;
   }
 
+  /* 将蓝色框也上下显示 */
   .toggle-box::before {
       left: 0;
       width: 100%;
@@ -242,6 +263,7 @@ body {
       border-radius: 20vw;
   }
 
+  /* 往下移动 */
   .container.active .toggle-box::before {
       left: 0;
       top: 70%;
@@ -256,6 +278,7 @@ body {
       top: 0;
   }
 
+  /* 往上走，移除画面 */
   .container.active .toggle-panel.toggle-left {
       left: 0;
       top: -30%;
@@ -266,6 +289,7 @@ body {
       bottom: -30%;
   }
 
+  /* 贴底，显示在画布中 */
   .container.active .toggle-panel.toggle-right {
       bottom: 0;
   }
